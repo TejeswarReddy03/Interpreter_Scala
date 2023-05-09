@@ -1,0 +1,185 @@
+input1:
+object myclass{ var x:INT =67 ; var y:INT=68 ; if(x==6) x=6;y=7; else x=7;y=8;}
+output1:
+parse
+myclass
+id
+myclass
+Token(LCURL, '{')
+body
+Token(LCURL, '{')
+stmtlist
+Token(VAR, 'VAR')
+stmt
+decleration stmt
+var eaten
+Token(ID, 'x')
+Token(COLON, ':')
+done
+done
+Token(INT, 'INT')
+Token(ASSIGN, '=')
+expr
+term
+factor
+Token(INTEGER, 67)
+stmt
+decleration stmt
+var eaten
+Token(ID, 'y')
+Token(COLON, ':')
+done
+done
+Token(INT, 'INT')
+Token(ASSIGN, '=')
+expr
+term
+factor
+Token(INTEGER, 68)
+stmt
+stmt1
+ifstmt
+Token(LPAREN, '(')
+Token(ID, 'x')
+cond_stmt
+expr
+term
+factor
+x
+id
+expr
+term
+factor
+Token(INTEGER, 6)
+Token(RPAREN, ')')
+stmtlist
+Token(ID, 'x')
+stmt
+assign_stmt
+x
+id
+expr
+term
+factor
+Token(INTEGER, 6)
+stmt
+assign_stmt
+y
+id
+expr
+term
+factor
+Token(INTEGER, 7)
+stmt
+stmt1
+statement list completed and yet to go to else
+Token(ELSE, 'ELSE')
+else statement
+successfully ate else
+Token(ID, 'x')
+stmtlist
+Token(ID, 'x')
+stmt
+assign_stmt
+x
+id
+expr
+term
+factor
+Token(INTEGER, 7)
+stmt
+assign_stmt
+y
+id
+expr
+term
+factor
+Token(INTEGER, 8)
+stmt
+stmt1
+RCURL
+Define: INTEGER
+<__main__.Type object at 0x0000019023E4D580>
+Lookup: <__main__.Type object at 0x0000019023E4D580>
+Define: <x:None>
+<__main__.Type object at 0x0000019023E4D7C0>
+Lookup: <__main__.Type object at 0x0000019023E4D7C0>
+Define: <y:None>
+
+Symbol Table contents:
+Symbols: [INTEGER, <x:None>, <y:None>]
+
+Run-time GLOBAL_MEMORY contents:
+x = 7
+y = 8
+
+Process finished with exit code 0
+//the else statement was executed and the value of x and y are modified to 7 and 8
+input2:
+object demo{ 
+	var x : int = 5;
+	do{
+		x=x-3
+	}
+	while( x<3) 
+}   
+
+parser output:
+
+parse
+demo
+id
+demo
+Token(LCURL, '{')
+body
+Token(LCURL, '{')
+stmtlist
+Token(VAR, 'VAR')
+stmt
+decleration stmt
+var eaten
+Token(ID, 'x')
+Token(COLON, ':')
+done
+done
+Token(INT, 'INT')
+Token(ASSIGN, '=')
+expr
+term
+factor
+Token(INTEGER, 5)
+stmt
+stmt1
+dostmt
+Token(LCURL, '{')
+Token(ID, 'x')
+stmtlist
+Token(ID, 'x')
+stmt
+assign_stmt
+x
+id
+expr
+term
+factor
+x
+id
+term
+factor
+Token(INTEGER, 3)
+Token(RCURL, '}')
+Token(WHILE, 'WHILE')
+Token(LPAREN, '(')
+Token(ID, 'x')
+cond_stmt
+expr
+term
+factor
+x
+id
+expr
+term
+factor
+Token(INTEGER, 3)
+Token(RPAREN, ')')
+RCURL
